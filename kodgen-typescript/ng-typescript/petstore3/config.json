@@ -2,6 +2,7 @@
 	"$schema": "../../../node_modules/kodgen-cli/dist/assets/generate-command-schema.json",
 	"package": "kodgen-typescript",
 	"generator": "ng-typescript",
+	"generatorConfigFile": "generator-config.json",
 	"templateDir": "./templates",
 	"hooksFile": "hooks.js",
 	"input": "openapi.json",
