@@ -1,0 +1,19 @@
+{
+  "name": "kodgen-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "axiosts-petstore2": "kodgen generate --config ./kodgen-typescript/axios-typescript/petstore2/config.json",
+    "fetchts-petstore2": "kodgen generate --config ./kodgen-typescript/axios-typescript/petstore2/config.json",
+    "ngts-petstore2": "kodgen generate --config ./kodgen-typescript/ng-typescript/petstore2/config.json",
+    "ngts-petstore3": "kodgen generate --config ./kodgen-typescript/ng-typescript/petstore3/config.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "kodgen": "file:kodgen-0.0.1.tgz",
+    "kodgen-cli": "file:kodgen-cli-0.0.1.tgz",
+    "kodgen-typescript": "file:kodgen-typescript-0.0.1.tgz"
+  }
+}

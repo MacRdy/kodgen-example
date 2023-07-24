@@ -1,0 +1,10 @@
+{
+	"$schema": "../../../node_modules/kodgen-cli/dist/assets/generate-command-schema.json",
+	"package": "kodgen-typescript",
+	"generator": "ng-typescript",
+	"templateDir": "./templates",
+	"hooksFile": "hooks.js",
+	"input": "openapi.json",
+	"output": "./out",
+	"clean": true
+}
