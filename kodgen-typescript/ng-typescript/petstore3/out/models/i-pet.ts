@@ -4,6 +4,7 @@ import { ICategory } from './i-category';
 import { ITag } from './i-tag';
 import { PetStatus } from '../enums/pet-status';
 
+// Custom header from templateDataFile
 export interface IPet {
 	readonly id?: number;
 	readonly name: string;

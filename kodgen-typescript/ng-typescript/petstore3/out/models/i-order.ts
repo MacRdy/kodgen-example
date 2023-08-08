@@ -2,6 +2,7 @@
 
 import { OrderStatus } from '../enums/order-status';
 
+// Custom header from templateDataFile
 export interface IOrder {
 	readonly id?: number;
 	readonly petId?: number;

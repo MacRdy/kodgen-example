@@ -4,6 +4,7 @@
 	"generator": "ng-typescript",
 	"generatorConfigFile": "generator-config.json",
 	"templateDir": "./templates",
+	"templateDataFile": "./template-data.js",
 	"hooksFile": "hooks.js",
 	"input": "openapi.json",
 	"output": "./out",

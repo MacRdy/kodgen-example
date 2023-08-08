@@ -5,7 +5,8 @@ import { <%- importEntry.keys.join(', ') %> } from '<%- importEntry.path %>';
 <%_ } -%>
 <%_ for (const model of k.models) { -%>
 
-export interface <%= model.name %> {
+// <%- user.getHeader() %>
+export interface <%- model.name %> {
 	<%_ for (const prop of model.properties) { -%>
 	<%_ const jsdocPropertyResult = k.jsdoc.build({ deprecated: prop.deprecated, description: prop.description }, 1) -%>
 	<%_ if (jsdocPropertyResult) { -%>
