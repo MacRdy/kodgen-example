@@ -4,6 +4,6 @@
 	"generator": "axios-typescript",
 	"generatorConfigFile": "classes-generator-config.json",
 	"input": "swagger.json",
-	"output": "./out",
+	"output": "./out-classes",
 	"clean": true
 }
