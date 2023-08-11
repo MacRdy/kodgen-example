@@ -1,0 +1,4 @@
+{
+	"$schema": "../../../node_modules/kodgen-typescript/dist/assets/fetch-typescript-config-schema.json",
+	"useClasses": true
+}
