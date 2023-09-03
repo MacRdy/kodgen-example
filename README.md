@@ -1,9 +1,16 @@
 # Kodgen (examples)
 
-1. [Petstore2. TypeScript with Axios](kodgen-typescript/axios-typescript/petstore2/) ([`kodgen-typescript/axios-typescript`](https://github.com/MacRdy/kodgen-typescript), custom generator config)
+* [Axios and TypeScript](https://github.com/MacRdy/kodgen-typescript)
+    1. [Petstore2](generators/kodgen-typescript/axios-typescript/petstore2) (custom generator config)
+    1. [Petstore3](generators/kodgen-typescript/axios-typescript/petstore3)
+    1. [Loopback TODO](generators/kodgen-typescript/axios-typescript/loopback-todo)
 
-1. [Petstore2. TypeScript with Fetch API](kodgen-typescript/fetch-typescript/petstore2/) ([`kodgen-typescript/fetch-typescript`](https://github.com/MacRdy/kodgen-typescript), custom generator config)
+* [Fetch API and TypeScript](https://github.com/MacRdy/kodgen-typescript)
+    1. [Petstore2](generators/kodgen-typescript/fetch-typescript/petstore2) (custom generator config)
+    1. [Petstore3](generators/kodgen-typescript/fetch-typescript/petstore3)
+    1. [Loopback TODO](generators/kodgen-typescript/fetch-typescript/loopback-todo)
 
-1. [Petstore2. TypeScript + Angular](kodgen-typescript/ng-typescript//petstore2/) ([`kodgen-typescript/ng-typescript`](https://github.com/MacRdy/kodgen-typescript))
-
-1. [Petstore3. TypeScript + Angular](kodgen-typescript/ng-typescript//petstore3/) ([`kodgen-typescript/ng-typescript`](https://github.com/MacRdy/kodgen-typescript), custom templates and hooks)
+* [Angular and TypeScript](https://github.com/MacRdy/kodgen-typescript)
+    1. [Petstore2](generators/kodgen-typescript/ng-typescript/petstore2)
+    1. [Petstore3](generators/kodgen-typescript/ng-typescript/petstore3) (custom templates and hooks)
+    1. [Loopback TODO](generators/kodgen-typescript/ng-typescript/loopback-todo)
