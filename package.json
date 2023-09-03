@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "axiosts-petstore2": "kodgen generate --config ./generators/kodgen-typescript/axios-typescript/petstore2/config.json",
+    "axiosts-petstore3": "kodgen generate --config ./generators/kodgen-typescript/axios-typescript/petstore3/config.json",
+    "axiosts-loopback-todo": "kodgen generate --config ./generators/kodgen-typescript/axios-typescript/loopback-todo/config.json",
     "fetchts-petstore2": "kodgen generate --config ./generators/kodgen-typescript/fetch-typescript/petstore2/config.json",
+    "fetchts-petstore3": "kodgen generate --config ./generators/kodgen-typescript/fetch-typescript/petstore3/config.json",
+    "fetchts-loopback-todo": "kodgen generate --config ./generators/kodgen-typescript/fetch-typescript/loopback-todo/config.json",
     "ngts-petstore2": "kodgen generate --config ./generators/kodgen-typescript/ng-typescript/petstore2/config.json",
     "ngts-petstore3": "kodgen generate --config ./generators/kodgen-typescript/ng-typescript/petstore3/config.json",
     "ngts-loopback-todo": "kodgen generate --config ./generators/kodgen-typescript/ng-typescript/loopback-todo/config.json"

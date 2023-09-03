@@ -1,0 +1,8 @@
+{
+	"$schema": "../../../../node_modules/kodgen-cli/dist/assets/generate-command-schema.json",
+	"package": "kodgen-typescript",
+	"generator": "axios-typescript",
+	"input": "../../../../schemas/petstore3/openapi.json",
+	"output": "./out",
+	"clean": true
+}
