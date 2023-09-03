@@ -20,6 +20,7 @@ export class PetApiService {
 	/**
 	 * @summary Update an existing pet
 	 * @description Update an existing pet by Id
+	 * @description Successful operation
 	 * @param {IPet} body - Update an existent pet in the store
 	 */
 	updatePet(
@@ -37,6 +38,7 @@ export class PetApiService {
 	/**
 	 * @summary Add a new pet to the store
 	 * @description Add a new pet to the store
+	 * @description Successful operation
 	 * @param {IPet} body - Create a new pet in the store
 	 */
 	addPet(
@@ -54,6 +56,7 @@ export class PetApiService {
 	/**
 	 * @summary Finds Pets by status
 	 * @description Multiple status values can be provided with comma separated strings
+	 * @description successful operation
 	 * @param {IGetPetFindByStatusQueryParameters} queryParams
 	 */
 	findPetsByStatus(
@@ -77,6 +80,7 @@ export class PetApiService {
 	/**
 	 * @summary Finds Pets by tags
 	 * @description Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
+	 * @description successful operation
 	 * @param {IGetPetFindByTagsQueryParameters} queryParams
 	 */
 	findPetsByTags(
@@ -100,6 +104,7 @@ export class PetApiService {
 	/**
 	 * @summary Find pet by ID
 	 * @description Returns a single pet
+	 * @description successful operation
 	 * @param {number} petId
 	 */
 	getPetById(
@@ -155,9 +160,10 @@ export class PetApiService {
 
 	/**
 	 * @summary uploads an image
+	 * @description successful operation
 	 * @param {number} petId
 	 * @param {IPostPetPetIdUploadImageQueryParameters} queryParams
-	 * @param {Blob} body
+	 * @param {Blob} [body]
 	 */
 	uploadFile(
 		petId: number,

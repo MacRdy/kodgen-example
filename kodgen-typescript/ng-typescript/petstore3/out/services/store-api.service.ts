@@ -16,6 +16,7 @@ export class StoreApiService {
 	/**
 	 * @summary Returns pet inventories by status
 	 * @description Returns a map of status codes to quantities
+	 * @description successful operation
 	 */
 	getInventory(
 	): Observable<IGetStoreInventory200Response> {
@@ -30,7 +31,8 @@ export class StoreApiService {
 	/**
 	 * @summary Place an order for a pet
 	 * @description Place a new order in the store
-	 * @param {IOrder} body
+	 * @description successful operation
+	 * @param {IOrder} [body]
 	 */
 	placeOrder(
 		body?: IOrder,
@@ -47,6 +49,7 @@ export class StoreApiService {
 	/**
 	 * @summary Find purchase order by ID
 	 * @description For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
+	 * @description successful operation
 	 * @param {number} orderId
 	 */
 	getOrderById(

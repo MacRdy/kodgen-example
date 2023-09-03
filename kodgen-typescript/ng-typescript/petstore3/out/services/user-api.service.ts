@@ -16,7 +16,8 @@ export class UserApiService {
 	/**
 	 * @summary Create user
 	 * @description This can only be done by the logged in user.
-	 * @param {IUser} body - Created user object
+	 * @description successful operation
+	 * @param {IUser} [body] - Created user object
 	 */
 	createUser(
 		body?: IUser,
@@ -33,7 +34,8 @@ export class UserApiService {
 	/**
 	 * @summary Creates list of users with given input array
 	 * @description Creates list of users with given input array
-	 * @param {Array<IUser>} body
+	 * @description Successful operation
+	 * @param {Array<IUser>} [body]
 	 */
 	createUsersWithListInput(
 		body?: Array<IUser>,
@@ -49,6 +51,7 @@ export class UserApiService {
 
 	/**
 	 * @summary Logs user into the system
+	 * @description successful operation
 	 * @param {IGetUserLoginQueryParameters} queryParams
 	 */
 	loginUser(
@@ -71,7 +74,10 @@ export class UserApiService {
 		);
 	}
 
-	/** @summary Logs out current logged in user session */
+	/**
+	 * @summary Logs out current logged in user session
+	 * @description successful operation
+	 */
 	logoutUser(
 	): Observable<void> {
 		return this.http.request<void>(
@@ -84,6 +90,7 @@ export class UserApiService {
 
 	/**
 	 * @summary Get user by user name
+	 * @description successful operation
 	 * @param {string} username
 	 */
 	getUserByName(
@@ -100,8 +107,9 @@ export class UserApiService {
 	/**
 	 * @summary Update user
 	 * @description This can only be done by the logged in user.
+	 * @description successful operation
 	 * @param {string} username
-	 * @param {IUser} body - Update an existent user in the store
+	 * @param {IUser} [body] - Update an existent user in the store
 	 */
 	updateUser(
 		username: string,

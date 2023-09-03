@@ -1,0 +1,579 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "@loopback/example-todo",
+    "version": "7.1.2",
+    "description": "Tutorial example on how to build an application with LoopBack 4",
+    "contact": {
+      "name": "IBM Corp. and LoopBack contributors"
+    }
+  },
+  "paths": {
+    "/todos/count": {
+      "get": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "count",
+        "tags": ["TodoController"],
+        "responses": {
+          "200": {
+            "description": "Todo model count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Todo.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Todo>"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TodoController.count"
+      }
+    },
+    "/todos/{id}": {
+      "put": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "replaceById",
+        "tags": ["TodoController"],
+        "responses": {
+          "204": {
+            "description": "Todo PUT success"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Todo"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "TodoController.replaceById"
+      },
+      "patch": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "updateById",
+        "tags": ["TodoController"],
+        "responses": {
+          "204": {
+            "description": "Todo PATCH success"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TodoPartial"
+              }
+            }
+          },
+          "x-parameter-index": 1
+        },
+        "operationId": "TodoController.updateById"
+      },
+      "get": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "findById",
+        "tags": ["TodoController"],
+        "responses": {
+          "200": {
+            "description": "Todo model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TodoWithRelations"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Todo.Filter"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TodoController.findById"
+      },
+      "delete": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "deleteById",
+        "tags": ["TodoController"],
+        "responses": {
+          "204": {
+            "description": "Todo DELETE success"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          }
+        ],
+        "operationId": "TodoController.deleteById"
+      }
+    },
+    "/todos": {
+      "post": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "create",
+        "tags": ["TodoController"],
+        "responses": {
+          "200": {
+            "description": "Todo model instance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Todo"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTodo"
+              }
+            }
+          }
+        },
+        "operationId": "TodoController.create"
+      },
+      "patch": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "updateAll",
+        "tags": ["TodoController"],
+        "responses": {
+          "200": {
+            "description": "Todo PATCH success count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/loopback.Count"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Todo.WhereFilter",
+                  "additionalProperties": true,
+                  "x-typescript-type": "@loopback/repository#Where<Todo>"
+                }
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TodoPartial"
+              }
+            }
+          }
+        },
+        "operationId": "TodoController.updateAll"
+      },
+      "get": {
+        "x-controller-name": "TodoController",
+        "x-operation-name": "find",
+        "tags": ["TodoController"],
+        "responses": {
+          "200": {
+            "description": "Array of Todo model instances",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TodoWithRelations"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Todo.Filter1"
+                }
+              }
+            }
+          }
+        ],
+        "operationId": "TodoController.find"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Todo": {
+        "title": "Todo",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string"
+          },
+          "isComplete": {
+            "type": "boolean"
+          },
+          "remindAtAddress": {
+            "type": "string"
+          },
+          "remindAtGeo": {
+            "type": "string"
+          },
+          "tag": {}
+        },
+        "required": ["title"],
+        "additionalProperties": false
+      },
+      "NewTodo": {
+        "title": "NewTodo",
+        "type": "object",
+        "description": "(tsType: Omit<Todo, 'id'>, schemaOptions: { title: 'NewTodo', exclude: [ 'id' ] })",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string"
+          },
+          "isComplete": {
+            "type": "boolean"
+          },
+          "remindAtAddress": {
+            "type": "string"
+          },
+          "remindAtGeo": {
+            "type": "string"
+          },
+          "tag": {}
+        },
+        "required": ["title"],
+        "additionalProperties": false,
+        "x-typescript-type": "Omit<Todo, 'id'>"
+      },
+      "TodoWithRelations": {
+        "title": "TodoWithRelations",
+        "type": "object",
+        "description": "(tsType: TodoWithRelations, schemaOptions: { includeRelations: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string"
+          },
+          "isComplete": {
+            "type": "boolean"
+          },
+          "remindAtAddress": {
+            "type": "string"
+          },
+          "remindAtGeo": {
+            "type": "string"
+          },
+          "tag": {}
+        },
+        "required": ["title"],
+        "additionalProperties": false,
+        "x-typescript-type": "TodoWithRelations"
+      },
+      "TodoPartial": {
+        "title": "TodoPartial",
+        "type": "object",
+        "description": "(tsType: Partial<Todo>, schemaOptions: { partial: true })",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string"
+          },
+          "isComplete": {
+            "type": "boolean"
+          },
+          "remindAtAddress": {
+            "type": "string"
+          },
+          "remindAtGeo": {
+            "type": "string"
+          },
+          "tag": {}
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "Partial<Todo>"
+      },
+      "loopback.Count": {
+        "type": "object",
+        "title": "loopback.Count",
+        "x-typescript-type": "@loopback/repository#Count",
+        "properties": {
+          "count": {
+            "type": "number"
+          }
+        }
+      },
+      "Todo.Filter": {
+        "type": "object",
+        "title": "Todo.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "boolean"
+                  },
+                  "desc": {
+                    "type": "boolean"
+                  },
+                  "isComplete": {
+                    "type": "boolean"
+                  },
+                  "remindAtAddress": {
+                    "type": "boolean"
+                  },
+                  "remindAtGeo": {
+                    "type": "boolean"
+                  },
+                  "tag": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "title",
+                    "desc",
+                    "isComplete",
+                    "remindAtAddress",
+                    "remindAtGeo",
+                    "tag"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Todo.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Todo>"
+      },
+      "Todo.Filter1": {
+        "type": "object",
+        "title": "Todo.Filter",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "example": 100
+          },
+          "skip": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "order": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "where": {
+            "title": "Todo.WhereFilter",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "fields": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "boolean"
+                  },
+                  "title": {
+                    "type": "boolean"
+                  },
+                  "desc": {
+                    "type": "boolean"
+                  },
+                  "isComplete": {
+                    "type": "boolean"
+                  },
+                  "remindAtAddress": {
+                    "type": "boolean"
+                  },
+                  "remindAtGeo": {
+                    "type": "boolean"
+                  },
+                  "tag": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": false
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "id",
+                    "title",
+                    "desc",
+                    "isComplete",
+                    "remindAtAddress",
+                    "remindAtGeo",
+                    "tag"
+                  ],
+                  "example": "id"
+                },
+                "uniqueItems": true
+              }
+            ],
+            "title": "Todo.Fields"
+          }
+        },
+        "additionalProperties": false,
+        "x-typescript-type": "@loopback/repository#Filter<Todo>"
+      }
+    }
+  }
+}
