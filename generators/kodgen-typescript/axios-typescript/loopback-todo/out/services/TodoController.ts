@@ -29,7 +29,6 @@ export const todoControllerCount = (
 /**
  * @param {number} id
  * @param {GetTodosIdQueryParameters} queryParams
- * @returns (tsType: TodoWithRelations, schemaOptions: { includeRelations: true })
  */
 export const todoControllerFindById = (
 	id: number,

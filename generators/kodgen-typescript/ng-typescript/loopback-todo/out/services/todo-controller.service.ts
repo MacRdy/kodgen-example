@@ -41,7 +41,6 @@ export class TodoControllerService {
 	/**
 	 * @param {number} id
 	 * @param {GetTodosIdQueryParameters} queryParams
-	 * @returns (tsType: TodoWithRelations, schemaOptions: { includeRelations: true })
 	 */
 	findById(
 		id: number,
