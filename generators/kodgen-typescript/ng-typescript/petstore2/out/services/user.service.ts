@@ -47,7 +47,6 @@ export class UserService {
 
 	/**
 	 * @summary Get user by user name
-	 * @description successful operation
 	 * @param {string} username - The name that needs to be fetched. Use user1 for testing.
 	 */
 	getUserByName(
@@ -98,7 +97,6 @@ export class UserService {
 
 	/**
 	 * @summary Logs user into the system
-	 * @description successful operation
 	 * @param {GetUserLoginQueryParameters} queryParams
 	 */
 	loginUser(

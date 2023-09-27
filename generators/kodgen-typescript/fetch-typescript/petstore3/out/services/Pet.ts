@@ -9,7 +9,6 @@ import { ApiResponse } from '../models/ApiResponse';
 /**
  * @summary Update an existing pet
  * @description Update an existing pet by Id
- * @description Successful operation
  * @param {Pet} body - Update an existent pet in the store
  */
 export const petUpdatePet = (
@@ -25,7 +24,6 @@ export const petUpdatePet = (
 /**
  * @summary Add a new pet to the store
  * @description Add a new pet to the store
- * @description Successful operation
  * @param {Pet} body - Create a new pet in the store
  */
 export const petAddPet = (
@@ -41,7 +39,6 @@ export const petAddPet = (
 /**
  * @summary Finds Pets by status
  * @description Multiple status values can be provided with comma separated strings
- * @description successful operation
  * @param {GetPetFindByStatusQueryParameters} queryParams
  */
 export const petFindPetsByStatus = (
@@ -61,7 +58,6 @@ export const petFindPetsByStatus = (
 /**
  * @summary Finds Pets by tags
  * @description Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
- * @description successful operation
  * @param {GetPetFindByTagsQueryParameters} queryParams
  */
 export const petFindPetsByTags = (
@@ -81,7 +77,6 @@ export const petFindPetsByTags = (
 /**
  * @summary Find pet by ID
  * @description Returns a single pet
- * @description successful operation
  * @param {number} petId
  */
 export const petGetPetById = (
@@ -129,7 +124,6 @@ export const petDeletePet = (
 
 /**
  * @summary uploads an image
- * @description successful operation
  * @param {number} petId
  * @param {PostPetPetIdUploadImageQueryParameters} queryParams
  * @param {Blob} [body]

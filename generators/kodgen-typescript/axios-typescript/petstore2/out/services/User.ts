@@ -34,7 +34,6 @@ export const userCreateUsersWithListInput = (
 
 /**
  * @summary Get user by user name
- * @description successful operation
  * @param {string} username - The name that needs to be fetched. Use user1 for testing.
  */
 export const userGetUserByName = (
@@ -79,7 +78,6 @@ export const userDeleteUser = (
 
 /**
  * @summary Logs user into the system
- * @description successful operation
  * @param {GetUserLoginQueryParameters} queryParams
  */
 export const userLoginUser = (

@@ -8,7 +8,6 @@ import { PostPetPetIdFormData } from '../models/PostPetPetIdFormData';
 
 /**
  * @summary uploads an image
- * @description successful operation
  * @param {number} petId - ID of pet to update
  * @param {PostPetPetIdUploadImageFormData} [body]
  */
@@ -57,7 +56,6 @@ export const petAddPet = (
 /**
  * @summary Finds Pets by status
  * @description Multiple status values can be provided with comma separated strings
- * @description successful operation
  * @param {GetPetFindByStatusQueryParameters} queryParams
  */
 export const petFindPetsByStatus = (
@@ -78,7 +76,6 @@ export const petFindPetsByStatus = (
  * @deprecated
  * @summary Finds Pets by tags
  * @description Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
- * @description successful operation
  * @param {GetPetFindByTagsQueryParameters} queryParams
  */
 export const petFindPetsByTags = (
@@ -98,7 +95,6 @@ export const petFindPetsByTags = (
 /**
  * @summary Find pet by ID
  * @description Returns a single pet
- * @description successful operation
  * @param {number} petId - ID of pet to return
  */
 export const petGetPetById = (

@@ -7,7 +7,6 @@ import { Order } from '../models/Order';
 /**
  * @summary Returns pet inventories by status
  * @description Returns a map of status codes to quantities
- * @description successful operation
  */
 export const storeGetInventory = (
 ): Promise<GetStoreInventory200Response> => {
@@ -20,7 +19,6 @@ export const storeGetInventory = (
 /**
  * @summary Place an order for a pet
  * @description Place a new order in the store
- * @description successful operation
  * @param {Order} [body]
  */
 export const storePlaceOrder = (
@@ -36,7 +34,6 @@ export const storePlaceOrder = (
 /**
  * @summary Find purchase order by ID
  * @description For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.
- * @description successful operation
  * @param {number} orderId
  */
 export const storeGetOrderById = (

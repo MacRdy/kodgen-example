@@ -19,10 +19,7 @@ export class TodoControllerService {
 
 	constructor(private readonly http: HttpClient) {}
 
-	/**
-	 * @description Todo model count
-	 * @param {GetTodosCountQueryParameters} queryParams
-	 */
+	/** @param {GetTodosCountQueryParameters} queryParams */
 	count(
 		queryParams: GetTodosCountQueryParameters,
 	): Observable<LoopbackCount> {
@@ -42,7 +39,6 @@ export class TodoControllerService {
 	}
 
 	/**
-	 * @description Todo model instance
 	 * @param {number} id
 	 * @param {GetTodosIdQueryParameters} queryParams
 	 * @returns (tsType: TodoWithRelations, schemaOptions: { includeRelations: true })
@@ -71,7 +67,6 @@ export class TodoControllerService {
 	}
 
 	/**
-	 * @description Todo PUT success
 	 * @param {number} id
 	 * @param {Todo} [body]
 	 */
@@ -88,10 +83,7 @@ export class TodoControllerService {
 		);
 	}
 
-	/**
-	 * @description Todo DELETE success
-	 * @param {number} id
-	 */
+	/** @param {number} id */
 	deleteById(
 		id: number,
 	): Observable<void> {
@@ -104,7 +96,6 @@ export class TodoControllerService {
 	}
 
 	/**
-	 * @description Todo PATCH success
 	 * @param {number} id
 	 * @param {TodoPartial} [body]
 	 */
@@ -121,10 +112,7 @@ export class TodoControllerService {
 		);
 	}
 
-	/**
-	 * @description Array of Todo model instances
-	 * @param {GetTodosQueryParameters} queryParams
-	 */
+	/** @param {GetTodosQueryParameters} queryParams */
 	find(
 		queryParams: GetTodosQueryParameters,
 	): Observable<Array<TodoWithRelations>> {
@@ -148,10 +136,7 @@ export class TodoControllerService {
 		);
 	}
 
-	/**
-	 * @description Todo model instance
-	 * @param {NewTodo} [body]
-	 */
+	/** @param {NewTodo} [body] */
 	create(
 		body?: NewTodo,
 	): Observable<Todo> {
@@ -165,7 +150,6 @@ export class TodoControllerService {
 	}
 
 	/**
-	 * @description Todo PATCH success count
 	 * @param {PatchTodosQueryParameters} queryParams
 	 * @param {TodoPartial} [body]
 	 */

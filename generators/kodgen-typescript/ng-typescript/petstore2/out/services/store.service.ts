@@ -15,7 +15,6 @@ export class StoreService {
 
 	/**
 	 * @summary Place an order for a pet
-	 * @description successful operation
 	 * @param {Order} body - order placed for purchasing the pet
 	 */
 	placeOrder(
@@ -33,7 +32,6 @@ export class StoreService {
 	/**
 	 * @summary Find purchase order by ID
 	 * @description For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
-	 * @description successful operation
 	 * @param {number} orderId - ID of pet that needs to be fetched
 	 */
 	getOrderById(
@@ -66,7 +64,6 @@ export class StoreService {
 	/**
 	 * @summary Returns pet inventories by status
 	 * @description Returns a map of status codes to quantities
-	 * @description successful operation
 	 */
 	getInventory(
 	): Observable<GetStoreInventory200Response> {

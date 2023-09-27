@@ -9,10 +9,7 @@ import { GetTodosQueryParameters } from '../models/GetTodosQueryParameters';
 import { NewTodo } from '../models/NewTodo';
 import { PatchTodosQueryParameters } from '../models/PatchTodosQueryParameters';
 
-/**
- * @description Todo model count
- * @param {GetTodosCountQueryParameters} queryParams
- */
+/** @param {GetTodosCountQueryParameters} queryParams */
 export const todoControllerCount = (
 	queryParams: GetTodosCountQueryParameters,
 ): Promise<LoopbackCount> => {
@@ -28,7 +25,6 @@ export const todoControllerCount = (
 }
 
 /**
- * @description Todo model instance
  * @param {number} id
  * @param {GetTodosIdQueryParameters} queryParams
  * @returns (tsType: TodoWithRelations, schemaOptions: { includeRelations: true })
@@ -53,7 +49,6 @@ export const todoControllerFindById = (
 }
 
 /**
- * @description Todo PUT success
  * @param {number} id
  * @param {Todo} [body]
  */
@@ -68,10 +63,7 @@ export const todoControllerReplaceById = (
 	});
 }
 
-/**
- * @description Todo DELETE success
- * @param {number} id
- */
+/** @param {number} id */
 export const todoControllerDeleteById = (
 	id: number,
 ): Promise<void> => {
@@ -82,7 +74,6 @@ export const todoControllerDeleteById = (
 }
 
 /**
- * @description Todo PATCH success
  * @param {number} id
  * @param {TodoPartial} [body]
  */
@@ -97,10 +88,7 @@ export const todoControllerUpdateById = (
 	});
 }
 
-/**
- * @description Array of Todo model instances
- * @param {GetTodosQueryParameters} queryParams
- */
+/** @param {GetTodosQueryParameters} queryParams */
 export const todoControllerFind = (
 	queryParams: GetTodosQueryParameters,
 ): Promise<Array<TodoWithRelations>> => {
@@ -120,10 +108,7 @@ export const todoControllerFind = (
 	});
 }
 
-/**
- * @description Todo model instance
- * @param {NewTodo} [body]
- */
+/** @param {NewTodo} [body] */
 export const todoControllerCreate = (
 	body?: NewTodo,
 ): Promise<Todo> => {
@@ -135,7 +120,6 @@ export const todoControllerCreate = (
 }
 
 /**
- * @description Todo PATCH success count
  * @param {PatchTodosQueryParameters} queryParams
  * @param {TodoPartial} [body]
  */

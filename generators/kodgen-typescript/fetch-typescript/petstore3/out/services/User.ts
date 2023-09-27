@@ -5,7 +5,6 @@ import { GetUserLoginQueryParameters } from '../models/GetUserLoginQueryParamete
 /**
  * @summary Create user
  * @description This can only be done by the logged in user.
- * @description successful operation
  * @param {User} [body] - Created user object
  */
 export const userCreateUser = (
@@ -21,7 +20,6 @@ export const userCreateUser = (
 /**
  * @summary Creates list of users with given input array
  * @description Creates list of users with given input array
- * @description Successful operation
  * @param {Array<User>} [body]
  */
 export const userCreateUsersWithListInput = (
@@ -36,7 +34,6 @@ export const userCreateUsersWithListInput = (
 
 /**
  * @summary Logs user into the system
- * @description successful operation
  * @param {GetUserLoginQueryParameters} queryParams
  */
 export const userLoginUser = (
@@ -55,10 +52,7 @@ export const userLoginUser = (
 	});
 }
 
-/**
- * @summary Logs out current logged in user session
- * @description successful operation
- */
+/** @summary Logs out current logged in user session */
 export const userLogoutUser = (
 ): Promise<void> => {
 	return apiRequest<void>({
@@ -69,7 +63,6 @@ export const userLogoutUser = (
 
 /**
  * @summary Get user by user name
- * @description successful operation
  * @param {string} username
  */
 export const userGetUserByName = (
@@ -84,7 +77,6 @@ export const userGetUserByName = (
 /**
  * @summary Update user
  * @description This can only be done by the logged in user.
- * @description successful operation
  * @param {string} username
  * @param {User} [body] - Update an existent user in the store
  */
