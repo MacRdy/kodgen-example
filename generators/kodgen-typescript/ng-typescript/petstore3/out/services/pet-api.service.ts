@@ -24,12 +24,62 @@ export class PetApiService {
 	 */
 	updatePet(
 		body: IPet,
-	): Observable<IPet> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<IPet>;
+	updatePet(
+		body: IPet,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	updatePet(
+		body: IPet,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	updatePet(
+		body: IPet,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	updatePet(
+		body: IPet,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<IPet>>;
+	updatePet(
+		body: IPet,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	updatePet(
+		body: IPet,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	updatePet(
+		body: IPet,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	updatePet(
+		body: IPet,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<IPet | Blob | ArrayBuffer | string | HttpEvent<IPet> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		return this.http.request<IPet>(
 			'PUT',
 			`${this.baseUrl}/pet`,
 			{
 				body: body,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -41,12 +91,62 @@ export class PetApiService {
 	 */
 	addPet(
 		body: IPet,
-	): Observable<IPet> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<IPet>;
+	addPet(
+		body: IPet,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	addPet(
+		body: IPet,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	addPet(
+		body: IPet,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	addPet(
+		body: IPet,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<IPet>>;
+	addPet(
+		body: IPet,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	addPet(
+		body: IPet,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	addPet(
+		body: IPet,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	addPet(
+		body: IPet,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<IPet | Blob | ArrayBuffer | string | HttpEvent<IPet> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		return this.http.request<IPet>(
 			'POST',
 			`${this.baseUrl}/pet`,
 			{
 				body: body,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -58,7 +158,54 @@ export class PetApiService {
 	 */
 	findPetsByStatus(
 		queryParams: IGetPetFindByStatusQueryParameters,
-	): Observable<Array<IPet>> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<Array<IPet>>;
+	findPetsByStatus(
+		queryParams: IGetPetFindByStatusQueryParameters,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	findPetsByStatus(
+		queryParams: IGetPetFindByStatusQueryParameters,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	findPetsByStatus(
+		queryParams: IGetPetFindByStatusQueryParameters,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	findPetsByStatus(
+		queryParams: IGetPetFindByStatusQueryParameters,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Array<IPet>>>;
+	findPetsByStatus(
+		queryParams: IGetPetFindByStatusQueryParameters,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	findPetsByStatus(
+		queryParams: IGetPetFindByStatusQueryParameters,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	findPetsByStatus(
+		queryParams: IGetPetFindByStatusQueryParameters,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	findPetsByStatus(
+		queryParams: IGetPetFindByStatusQueryParameters,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<Array<IPet> | Blob | ArrayBuffer | string | HttpEvent<Array<IPet>> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		const params = new HttpParams({
 			fromString: toQueryParams({
 				'status': queryParams.status,
@@ -70,6 +217,9 @@ export class PetApiService {
 			`${this.baseUrl}/pet/findByStatus`,
 			{
 				params,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -81,7 +231,54 @@ export class PetApiService {
 	 */
 	findPetsByTags(
 		queryParams: IGetPetFindByTagsQueryParameters,
-	): Observable<Array<IPet>> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<Array<IPet>>;
+	findPetsByTags(
+		queryParams: IGetPetFindByTagsQueryParameters,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	findPetsByTags(
+		queryParams: IGetPetFindByTagsQueryParameters,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	findPetsByTags(
+		queryParams: IGetPetFindByTagsQueryParameters,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	findPetsByTags(
+		queryParams: IGetPetFindByTagsQueryParameters,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Array<IPet>>>;
+	findPetsByTags(
+		queryParams: IGetPetFindByTagsQueryParameters,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	findPetsByTags(
+		queryParams: IGetPetFindByTagsQueryParameters,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	findPetsByTags(
+		queryParams: IGetPetFindByTagsQueryParameters,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	findPetsByTags(
+		queryParams: IGetPetFindByTagsQueryParameters,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<Array<IPet> | Blob | ArrayBuffer | string | HttpEvent<Array<IPet>> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		const params = new HttpParams({
 			fromString: toQueryParams({
 				'tags': queryParams.tags,
@@ -93,6 +290,9 @@ export class PetApiService {
 			`${this.baseUrl}/pet/findByTags`,
 			{
 				params,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -104,11 +304,61 @@ export class PetApiService {
 	 */
 	getPetById(
 		petId: number,
-	): Observable<IPet> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<IPet>;
+	getPetById(
+		petId: number,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	getPetById(
+		petId: number,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	getPetById(
+		petId: number,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	getPetById(
+		petId: number,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<IPet>>;
+	getPetById(
+		petId: number,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	getPetById(
+		petId: number,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	getPetById(
+		petId: number,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	getPetById(
+		petId: number,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<IPet | Blob | ArrayBuffer | string | HttpEvent<IPet> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		return this.http.request<IPet>(
 			'GET',
 			`${this.baseUrl}/pet/${petId}`,
 			{
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -121,7 +371,62 @@ export class PetApiService {
 	updatePetWithForm(
 		petId: number,
 		queryParams: IPostPetPetIdQueryParameters,
-	): Observable<void> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<void>;
+	updatePetWithForm(
+		petId: number,
+		queryParams: IPostPetPetIdQueryParameters,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	updatePetWithForm(
+		petId: number,
+		queryParams: IPostPetPetIdQueryParameters,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	updatePetWithForm(
+		petId: number,
+		queryParams: IPostPetPetIdQueryParameters,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	updatePetWithForm(
+		petId: number,
+		queryParams: IPostPetPetIdQueryParameters,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<void>>;
+	updatePetWithForm(
+		petId: number,
+		queryParams: IPostPetPetIdQueryParameters,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	updatePetWithForm(
+		petId: number,
+		queryParams: IPostPetPetIdQueryParameters,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	updatePetWithForm(
+		petId: number,
+		queryParams: IPostPetPetIdQueryParameters,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	updatePetWithForm(
+		petId: number,
+		queryParams: IPostPetPetIdQueryParameters,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<void | Blob | ArrayBuffer | string | HttpEvent<void> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		const params = new HttpParams({
 			fromString: toQueryParams({
 				'name': queryParams.name,
@@ -134,6 +439,9 @@ export class PetApiService {
 			`${this.baseUrl}/pet/${petId}`,
 			{
 				params,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -144,11 +452,61 @@ export class PetApiService {
 	 */
 	deletePet(
 		petId: number,
-	): Observable<void> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<void>;
+	deletePet(
+		petId: number,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	deletePet(
+		petId: number,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	deletePet(
+		petId: number,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	deletePet(
+		petId: number,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<void>>;
+	deletePet(
+		petId: number,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	deletePet(
+		petId: number,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	deletePet(
+		petId: number,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	deletePet(
+		petId: number,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<void | Blob | ArrayBuffer | string | HttpEvent<void> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		return this.http.request<void>(
 			'DELETE',
 			`${this.baseUrl}/pet/${petId}`,
 			{
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -163,7 +521,70 @@ export class PetApiService {
 		petId: number,
 		queryParams: IPostPetPetIdUploadImageQueryParameters,
 		body?: Blob,
-	): Observable<IApiResponse> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<IApiResponse>;
+	uploadFile(
+		petId: number,
+		queryParams: IPostPetPetIdUploadImageQueryParameters,
+		body?: Blob,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	uploadFile(
+		petId: number,
+		queryParams: IPostPetPetIdUploadImageQueryParameters,
+		body?: Blob,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	uploadFile(
+		petId: number,
+		queryParams: IPostPetPetIdUploadImageQueryParameters,
+		body?: Blob,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	uploadFile(
+		petId: number,
+		queryParams: IPostPetPetIdUploadImageQueryParameters,
+		body?: Blob,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<IApiResponse>>;
+	uploadFile(
+		petId: number,
+		queryParams: IPostPetPetIdUploadImageQueryParameters,
+		body?: Blob,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	uploadFile(
+		petId: number,
+		queryParams: IPostPetPetIdUploadImageQueryParameters,
+		body?: Blob,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	uploadFile(
+		petId: number,
+		queryParams: IPostPetPetIdUploadImageQueryParameters,
+		body?: Blob,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	uploadFile(
+		petId: number,
+		queryParams: IPostPetPetIdUploadImageQueryParameters,
+		body?: Blob,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<IApiResponse | Blob | ArrayBuffer | string | HttpEvent<IApiResponse> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		const params = new HttpParams({
 			fromString: toQueryParams({
 				'additionalMetadata': queryParams.additionalMetadata,
@@ -176,6 +597,9 @@ export class PetApiService {
 			{
 				body: body,
 				params,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}

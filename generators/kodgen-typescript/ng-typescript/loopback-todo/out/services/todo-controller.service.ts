@@ -22,7 +22,54 @@ export class TodoControllerService {
 	/** @param {GetTodosCountQueryParameters} queryParams */
 	count(
 		queryParams: GetTodosCountQueryParameters,
-	): Observable<LoopbackCount> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<LoopbackCount>;
+	count(
+		queryParams: GetTodosCountQueryParameters,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	count(
+		queryParams: GetTodosCountQueryParameters,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	count(
+		queryParams: GetTodosCountQueryParameters,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	count(
+		queryParams: GetTodosCountQueryParameters,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<LoopbackCount>>;
+	count(
+		queryParams: GetTodosCountQueryParameters,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	count(
+		queryParams: GetTodosCountQueryParameters,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	count(
+		queryParams: GetTodosCountQueryParameters,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	count(
+		queryParams: GetTodosCountQueryParameters,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<LoopbackCount | Blob | ArrayBuffer | string | HttpEvent<LoopbackCount> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		const params = new HttpParams({
 			fromString: toQueryParams({
 				'where': queryParams.where,
@@ -34,6 +81,9 @@ export class TodoControllerService {
 			`${this.baseUrl}/todos/count`,
 			{
 				params,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -45,7 +95,62 @@ export class TodoControllerService {
 	findById(
 		id: number,
 		queryParams: GetTodosIdQueryParameters,
-	): Observable<TodoWithRelations> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<TodoWithRelations>;
+	findById(
+		id: number,
+		queryParams: GetTodosIdQueryParameters,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	findById(
+		id: number,
+		queryParams: GetTodosIdQueryParameters,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	findById(
+		id: number,
+		queryParams: GetTodosIdQueryParameters,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	findById(
+		id: number,
+		queryParams: GetTodosIdQueryParameters,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<TodoWithRelations>>;
+	findById(
+		id: number,
+		queryParams: GetTodosIdQueryParameters,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	findById(
+		id: number,
+		queryParams: GetTodosIdQueryParameters,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	findById(
+		id: number,
+		queryParams: GetTodosIdQueryParameters,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	findById(
+		id: number,
+		queryParams: GetTodosIdQueryParameters,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<TodoWithRelations | Blob | ArrayBuffer | string | HttpEvent<TodoWithRelations> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		const params = new HttpParams({
 			fromString: toQueryParams({
 				'filter.offset': queryParams.filter?.offset,
@@ -61,6 +166,9 @@ export class TodoControllerService {
 			`${this.baseUrl}/todos/${id}`,
 			{
 				params,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -72,12 +180,70 @@ export class TodoControllerService {
 	replaceById(
 		id: number,
 		body?: Todo,
-	): Observable<void> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<void>;
+	replaceById(
+		id: number,
+		body?: Todo,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	replaceById(
+		id: number,
+		body?: Todo,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	replaceById(
+		id: number,
+		body?: Todo,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	replaceById(
+		id: number,
+		body?: Todo,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<void>>;
+	replaceById(
+		id: number,
+		body?: Todo,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	replaceById(
+		id: number,
+		body?: Todo,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	replaceById(
+		id: number,
+		body?: Todo,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	replaceById(
+		id: number,
+		body?: Todo,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<void | Blob | ArrayBuffer | string | HttpEvent<void> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		return this.http.request<void>(
 			'PUT',
 			`${this.baseUrl}/todos/${id}`,
 			{
 				body: body,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -85,11 +251,61 @@ export class TodoControllerService {
 	/** @param {number} id */
 	deleteById(
 		id: number,
-	): Observable<void> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<void>;
+	deleteById(
+		id: number,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	deleteById(
+		id: number,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	deleteById(
+		id: number,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	deleteById(
+		id: number,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<void>>;
+	deleteById(
+		id: number,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	deleteById(
+		id: number,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	deleteById(
+		id: number,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	deleteById(
+		id: number,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<void | Blob | ArrayBuffer | string | HttpEvent<void> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		return this.http.request<void>(
 			'DELETE',
 			`${this.baseUrl}/todos/${id}`,
 			{
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -101,12 +317,70 @@ export class TodoControllerService {
 	updateById(
 		id: number,
 		body?: TodoPartial,
-	): Observable<void> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<void>;
+	updateById(
+		id: number,
+		body?: TodoPartial,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	updateById(
+		id: number,
+		body?: TodoPartial,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	updateById(
+		id: number,
+		body?: TodoPartial,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	updateById(
+		id: number,
+		body?: TodoPartial,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<void>>;
+	updateById(
+		id: number,
+		body?: TodoPartial,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	updateById(
+		id: number,
+		body?: TodoPartial,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	updateById(
+		id: number,
+		body?: TodoPartial,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	updateById(
+		id: number,
+		body?: TodoPartial,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<void | Blob | ArrayBuffer | string | HttpEvent<void> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		return this.http.request<void>(
 			'PATCH',
 			`${this.baseUrl}/todos/${id}`,
 			{
 				body: body,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -114,7 +388,54 @@ export class TodoControllerService {
 	/** @param {GetTodosQueryParameters} queryParams */
 	find(
 		queryParams: GetTodosQueryParameters,
-	): Observable<Array<TodoWithRelations>> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<Array<TodoWithRelations>>;
+	find(
+		queryParams: GetTodosQueryParameters,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	find(
+		queryParams: GetTodosQueryParameters,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	find(
+		queryParams: GetTodosQueryParameters,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	find(
+		queryParams: GetTodosQueryParameters,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Array<TodoWithRelations>>>;
+	find(
+		queryParams: GetTodosQueryParameters,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	find(
+		queryParams: GetTodosQueryParameters,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	find(
+		queryParams: GetTodosQueryParameters,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	find(
+		queryParams: GetTodosQueryParameters,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<Array<TodoWithRelations> | Blob | ArrayBuffer | string | HttpEvent<Array<TodoWithRelations>> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		const params = new HttpParams({
 			fromString: toQueryParams({
 				'filter.offset': queryParams.filter?.offset,
@@ -131,6 +452,9 @@ export class TodoControllerService {
 			`${this.baseUrl}/todos`,
 			{
 				params,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -138,12 +462,62 @@ export class TodoControllerService {
 	/** @param {NewTodo} [body] */
 	create(
 		body?: NewTodo,
-	): Observable<Todo> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<Todo>;
+	create(
+		body?: NewTodo,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	create(
+		body?: NewTodo,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	create(
+		body?: NewTodo,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	create(
+		body?: NewTodo,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Todo>>;
+	create(
+		body?: NewTodo,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	create(
+		body?: NewTodo,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	create(
+		body?: NewTodo,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	create(
+		body?: NewTodo,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<Todo | Blob | ArrayBuffer | string | HttpEvent<Todo> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		return this.http.request<Todo>(
 			'POST',
 			`${this.baseUrl}/todos`,
 			{
 				body: body,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
@@ -155,7 +529,62 @@ export class TodoControllerService {
 	updateAll(
 		queryParams: PatchTodosQueryParameters,
 		body?: TodoPartial,
-	): Observable<LoopbackCount> {
+		observe?: 'body',
+		responseType?: 'json',
+	): Observable<LoopbackCount>;
+	updateAll(
+		queryParams: PatchTodosQueryParameters,
+		body?: TodoPartial,
+		observe?: 'body',
+		responseType?: 'blob',
+	): Observable<Blob>;
+	updateAll(
+		queryParams: PatchTodosQueryParameters,
+		body?: TodoPartial,
+		observe?: 'body',
+		responseType?: 'arraybuffer',
+	): Observable<ArrayBuffer>;
+	updateAll(
+		queryParams: PatchTodosQueryParameters,
+		body?: TodoPartial,
+		observe?: 'body',
+		responseType?: 'text',
+	): Observable<string>;
+	updateAll(
+		queryParams: PatchTodosQueryParameters,
+		body?: TodoPartial,
+		observe?: 'events',
+		responseType?: 'json',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<LoopbackCount>>;
+	updateAll(
+		queryParams: PatchTodosQueryParameters,
+		body?: TodoPartial,
+		observe?: 'events',
+		responseType?: 'blob',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<Blob>>;
+	updateAll(
+		queryParams: PatchTodosQueryParameters,
+		body?: TodoPartial,
+		observe?: 'events',
+		responseType?: 'arraybuffer',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<ArrayBuffer>>;
+	updateAll(
+		queryParams: PatchTodosQueryParameters,
+		body?: TodoPartial,
+		observe?: 'events',
+		responseType?: 'text',
+		reportProgress?: boolean,
+	): Observable<HttpEvent<string>>;
+	updateAll(
+		queryParams: PatchTodosQueryParameters,
+		body?: TodoPartial,
+		observe: 'body' | 'events' = 'body',
+		responseType: 'json' | 'blob' | 'arraybuffer' | 'text' = 'json',
+		reportProgress = false,
+	): Observable<LoopbackCount | Blob | ArrayBuffer | string | HttpEvent<LoopbackCount> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		const params = new HttpParams({
 			fromString: toQueryParams({
 				'where': queryParams.where,
@@ -168,6 +597,9 @@ export class TodoControllerService {
 			{
 				body: body,
 				params,
+				observe: observe as any,
+				responseType: responseType as any,
+				reportProgress,
 			},
 		);
 	}
