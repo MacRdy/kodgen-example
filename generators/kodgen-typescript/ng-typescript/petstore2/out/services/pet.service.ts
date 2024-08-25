@@ -82,7 +82,7 @@ export class PetService {
 		reportProgress = false,
 	): Observable<ApiResponse | Blob | ArrayBuffer | string | HttpEvent<ApiResponse> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		const formData = new FormData();
-		Object.entries(body ?? {}).forEach(([key, value]) => formData.append(key, value));
+		Object.entries(body ?? {}).forEach(([key, value]) => formData.append(key, typeof value === 'object' && !(value instanceof Blob) ? JSON.stringify(value) : value ));
 
 		return this.http.request<ApiResponse>(
 			'POST',
@@ -506,7 +506,7 @@ export class PetService {
 		reportProgress = false,
 	): Observable<void | Blob | ArrayBuffer | string | HttpEvent<void> | HttpEvent<Blob> | HttpEvent<ArrayBuffer> | HttpEvent<string>> {
 		const formData = new FormData();
-		Object.entries(body ?? {}).forEach(([key, value]) => formData.append(key, value));
+		Object.entries(body ?? {}).forEach(([key, value]) => formData.append(key, typeof value === 'object' && !(value instanceof Blob) ? JSON.stringify(value) : value ));
 
 		return this.http.request<void>(
 			'POST',

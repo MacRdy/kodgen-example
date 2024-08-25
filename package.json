@@ -17,8 +17,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "kodgen": "file:kodgen-0.0.1.tgz",
-    "kodgen-cli": "file:kodgen-cli-0.0.1.tgz",
-    "kodgen-typescript": "file:kodgen-typescript-0.0.1.tgz"
+    "kodgen": "^0.1.0",
+    "kodgen-cli": "^0.1.0",
+    "kodgen-typescript": "^0.1.0"
   }
 }
